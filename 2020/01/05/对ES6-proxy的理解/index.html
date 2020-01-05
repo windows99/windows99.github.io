@@ -5,12 +5,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hello World - 布朗熊先生</title>
+    <title>对ES6-proxy的理解 - 布朗熊先生</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="前端,博客,前端程序员,前端博客,布朗熊先生的博客,JavaScript,Vue,React,js,Css,"> 
-    <meta name="description" content="这里是布朗熊先生的博客，为什么叫布朗熊先生，大概是最爱的人喜欢这个名字把。一个前端爱好者，努力向高级前端开发前进。,Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pr,"> 
+    <meta name="description" content="这里是布朗熊先生的博客，为什么叫布朗熊先生，大概是最爱的人喜欢这个名字把。一个前端爱好者，努力向高级前端开发前进。,对ES6-proxy的理解
+ES6(ECMAScript2015) 是 JavaScript 一个版本标准，作为前端爱好者是必须要掌握的，本篇记录我对ES6中，proxy 的理解。
+
+字面理解Pro,"> 
     <meta name="author" content="布朗熊先生"> 
     <link rel="alternative" href="atom.xml" title="布朗熊先生" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -60,7 +63,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://windows99.github.io">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Hello World</h3>
+        <h3 class="subtitle">对ES6-proxy的理解</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -85,30 +88,30 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(http://pic.wsktop.com/images/2019/10/25/slide1.jpg);">
+                url(http://pic.wsktop.com/images/2019/10/25/backiee-127019.jpg);">
         </div>
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/web前端"><b>「
-                    </b>WEB前端<b> 」</b></a>
+                <a href="/categories/ES6"><b>「
+                    </b>ES6<b> 」</b></a>
                 
-                十二月 30, 2019
+                一月 05, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/12/30/hello-world/" title="Hello World" class="">Hello World</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/01/05/%E5%AF%B9ES6-proxy%E7%9A%84%E7%90%86%E8%A7%A3/" title="对ES6-proxy的理解" class="">对ES6-proxy的理解</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    1.8k
+                    6.1k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    2 mins.
+                    6 mins.
                 </span>
                 
                 
@@ -121,7 +124,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/" rel="tag">表单验证</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E8%A1%A8%E6%A0%BC/" rel="tag">表格</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Proxy/" rel="tag">Proxy</a></li></ul>
             
         </div>
     </div>
@@ -142,20 +145,175 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h1 id="对ES6-proxy的理解"><a href="#对ES6-proxy的理解" class="headerlink" title="对ES6-proxy的理解"></a>对ES6-proxy的理解</h1><blockquote>
+<p>ES6(ECMAScript2015) 是 <code>JavaScript</code> 一个版本标准，作为前端爱好者是必须要掌握的，本篇记录我对ES6中，<code>proxy</code> 的理解。</p>
+</blockquote>
+<h2 id="字面理解"><a href="#字面理解" class="headerlink" title="字面理解"></a>字面理解</h2><p><code>Proxy</code> 在英语中是代理的意思，那我们就引发了几个疑问：</p>
+<ol>
+<li>它代理了什么？</li>
+<li>为什么要代理？</li>
+<li>如何使用代理？</li>
+</ol>
+<p>首先我们引用阮老师的 <code>《ECMAScript 6 入门》</code> 书籍中的概述：</p>
+<blockquote>
+<p>Proxy 可以理解成，在<strong>目标对象</strong>之前架设一层“拦截器”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”。</p>
+</blockquote>
+<p>那么通过阮老师的这句话，我们可以得出第一个问题的答案：</p>
+<p><strong>它代理了对象</strong></p>
+<h2 id="为什么要代理"><a href="#为什么要代理" class="headerlink" title="为什么要代理"></a>为什么要代理</h2><p>第二个问题是为什么要使用 <code>proxy</code>？我总结了以下几点：</p>
+<ul>
+<li>拦截和监视外部对象的访问</li>
+<li>降低函数或类的复杂度</li>
+<li>在复杂操作前对操作进行校验或对所需资源进行管理</li>
+</ul>
+<p>先来一个不使用 <code>proxy</code> 的栗子：</p>
+<pre><code class="js">let user = {
+    name: &#39;John&#39;,
+    surname: &#39;Doe&#39;
+};
+
+let printUser = (property) =&gt; {
+    let value = user[property];
+    if (!value) {
+        throw new Error(`The property [${property}] does not exist`);
+    } else {
+        console.log(`The user ${property} is ${value}`);
+    }
+}
+
+printUser(&#39;name&#39;); // 输出: &#39;The user name is John&#39;
+printUser(&#39;email&#39;); // 抛出错误: The property [email] does not exist</code></pre>
+<p>这是一个简单的例子，我们有一个带有几个属性的用户对象，如果属性存在，我们想要打印用户信息，如果不存在，则抛出异常。通过上面的代码，你会发现：将条件和异常移到其他地方，而 <code>printUser</code> 中仅关注显示用户信息的实际逻辑会更好。这是我们可以使用代理对象的地方，让我们更新下这个例子。</p>
+<pre><code class="javascript">let user = {
+    name: &#39;John&#39;,
+    surname: &#39;Doe&#39;
+};
+
+let proxy = new Proxy(user, {
+    get(target, property) {
+        let value = target[property];
+        if (!value) {
+            throw new Error(`The property [${property}] does not exist`);
+        }
+        return value;
+    }
+});
+
+let printUser = (property) =&gt; {
+    console.log(`The user ${property} is ${proxy[property]}`);
+};
+
+printUser(&#39;name&#39;); // 输出： &#39;The user name is John&#39;
+printUser(&#39;email&#39;); // 抛出错误: The property [email] does not exist</code></pre>
+<p>在上面的示例中，我们包装了 <code>user</code> 对象，并设置了一个 <code>get</code> 方法。此方法充当拦截器，在返回值之前，会首先对属性值进行检查，如果不存在，则抛出异常。</p>
+<p>输出与第一种情况相同，但此时 <code>printUser</code> 函数专注于逻辑，只处理消息。</p>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><p>proxy除了代理get，set操作，还能代理其他的操作，如下：</p>
+<pre><code class="js">handler.getPrototypeOf()
+// 在读取代理对象的原型时触发该操作，比如在执行 Object.getPrototypeOf(proxy) 时。
+
+handler.setPrototypeOf()
+// 在设置代理对象的原型时触发该操作，比如在执行 Object.setPrototypeOf(proxy, null) 时。
+
+handler.isExtensible()
+// 在判断一个代理对象是否是可扩展时触发该操作，比如在执行 Object.isExtensible(proxy) 时。
+
+handler.preventExtensions()
+// 在让一个代理对象不可扩展时触发该操作，比如在执行 Object.preventExtensions(proxy) 时。
+
+handler.getOwnPropertyDescriptor()
+// 在获取代理对象某个属性的属性描述时触发该操作，比如在执行 Object.getOwnPropertyDescriptor(proxy, &quot;foo&quot;) 时。
+
+handler.defineProperty()
+// 在定义代理对象某个属性时的属性描述时触发该操作，比如在执行 Object.defineProperty(proxy, &quot;foo&quot;, {}) 时。
+
+handler.has()
+// 在判断代理对象是否拥有某个属性时触发该操作，比如在执行 &quot;foo&quot; in proxy 时。
+
+handler.get()
+// 在读取代理对象的某个属性时触发该操作，比如在执行 proxy.foo 时。
+
+handler.set()
+// 在给代理对象的某个属性赋值时触发该操作，比如在执行 proxy.foo = 1 时。
+
+handler.deleteProperty()
+// 在删除代理对象的某个属性时触发该操作，比如在执行 delete proxy.foo 时。
+
+handler.ownKeys()
+// 在获取代理对象的所有属性键时触发该操作，比如在执行 Object.getOwnPropertyNames(proxy) 时。
+
+handler.apply()
+// 在调用一个目标对象为函数的代理对象时触发该操作，比如在执行 proxy() 时。
+
+handler.construct()
+// 在给一个目标对象为构造函数的代理对象构造实例时触发该操作，比如在执行new proxy() 时。</code></pre>
+<h2 id="proxy栗子"><a href="#proxy栗子" class="headerlink" title="proxy栗子"></a>proxy栗子</h2><p>通过属性查找数组中的特定对象</p>
+<p>以下代理为数组扩展了一些实用工具，可一看到，你可以灵活地“定义”属性，而不需要使用 <code>Object.defineProperties</code> 方法。</p>
+<pre><code class="javascript">let products = new Proxy([
+  { name: &#39;Firefox&#39;, type: &#39;browser&#39; },
+  { name: &#39;SeaMonkey&#39;, type: &#39;browser&#39; },
+  { name: &#39;Thunderbird&#39;, type: &#39;mailer&#39; }
+],
+{
+  get: function(obj, prop) {
+    // 缺省行为是返回属性值， prop ?通常是一个整数
+    if (prop in obj) {
+      return obj[prop];
+    }
+
+    // 获取 products 的 number; 它是 products.length 的别名
+    if (prop === &#39;number&#39;) {
+      return obj.length;
+    }
+
+    let result, types = {};
+
+    for (let product of obj) {
+      if (product.name === prop) {
+        result = product;
+      }
+      if (types[product.type]) {
+        types[product.type].push(product);
+      } else {
+        types[product.type] = [product];
+      }
+    }
+
+    // 通过 name 获取 product
+    if (result) {
+      return result;
+    }
+
+    // 通过 type 获取 products
+    if (prop in types) {
+      return types[prop];
+    }
+
+    // 获取 product type
+    if (prop === &#39;types&#39;) {
+      return Object.keys(types);
+    }
+
+    return undefined;
+  }
+});
+
+console.log(products[0]); // { name: &#39;Firefox&#39;, type: &#39;browser&#39; }
+console.log(products[&#39;Firefox&#39;]); // { name: &#39;Firefox&#39;, type: &#39;browser&#39; }
+console.log(products[&#39;Chrome&#39;]); // undefined
+console.log(products.browser); // [{ name: &#39;Firefox&#39;, type: &#39;browser&#39; }, { name: &#39;SeaMonkey&#39;, type: &#39;browser&#39; }]
+console.log(products.types); // [&#39;browser&#39;, &#39;mailer&#39;]
+console.log(products.number); // 3</code></pre>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li>MDN官网对 <code>proxy</code> 的解释： <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank" rel="noopener" title="mdn官网对proxy解释">链接地址</a></li>
+<li>阮老师 《ECMAScript 6 入门》 对 <code>proxy</code> 的解释： <a href="http://es6.ruanyifeng.com/#docs/proxy" target="_blank" rel="noopener" title="阮老师 《ECMAScript 6 入门》对proxy解释">链接地址</a></li>
+<li>【译】Proxy及其优势：<a href="https://segmentfault.com/a/1190000019982184" target="_blank" rel="noopener">链接地址</a></li>
+<li>Proxy 的巧用：<a href="https://juejin.im/post/5d2e657ae51d4510b71da69d#heading-0" target="_blank" rel="noopener">链接地址</a></li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">
-                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+                <source type="audio/mpeg" src="../../../../../statics/denfziqi-zaijian.mp3">
             </audio>
             
             
@@ -201,7 +359,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#对ES6-proxy的理解"><span class="toc-number">1.</span> <span class="toc-text">对ES6-proxy的理解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#字面理解"><span class="toc-number">1.1.</span> <span class="toc-text">字面理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要代理"><span class="toc-number">1.2.</span> <span class="toc-text">为什么要代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例方法"><span class="toc-number">1.3.</span> <span class="toc-text">实例方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proxy栗子"><span class="toc-number">1.4.</span> <span class="toc-text">proxy栗子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-number">1.5.</span> <span class="toc-text">参考文章</span></a></li></ol></li></ol>
                 </div>
             </div>
             
