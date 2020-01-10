@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>webpack-初探</title>
+      <link href="/2020/01/06/webpack-%E5%88%9D%E6%8E%A2/"/>
+      <url>/2020/01/06/webpack-%E5%88%9D%E6%8E%A2/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><code>webpack</code> 将程序员编写的源代码，经过压缩、编译、语法检查等一系列操作，编译成浏览器可以识别的代码，优化性能。</p></blockquote><h1 id="Webpack基本介绍"><a href="#Webpack基本介绍" class="headerlink" title="Webpack基本介绍"></a>Webpack基本介绍</h1><h2 id="概念的引入"><a href="#概念的引入" class="headerlink" title="概念的引入"></a>概念的引入</h2><p>在网页中，我们经常会引入<code>JS</code> <code>CSS</code> <code>Img</code> <code>Fonts</code> <code>vue</code> 等这类的静态资源，这个时候我们来了两个问题：</p><ol><li><code>vue</code> <code>ejs</code> 等文件以及 <code>es6</code>的新语法、模块化开发浏览器读不懂啊！</li><li>网页加载速度慢，要多次重复的发生资源请求！</li></ol><p>如何解决这两个问题呢？别急，这个时候<code>webpack</code>的作用就来了！</p><h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>Webpack是一个前端的模块打包器，基于node开发出来的一个前端工具，将前端所有静态资源都当作模块处理。</p><h2 id="Webpack支持的规范"><a href="#Webpack支持的规范" class="headerlink" title="Webpack支持的规范"></a>Webpack支持的规范</h2><ol><li>ES6规范</li><li>CommonJS规范</li><li>AMD规范</li><li>CMD规范</li></ol><h1 id="Webpack基本使用"><a href="#Webpack基本使用" class="headerlink" title="Webpack基本使用"></a>Webpack基本使用</h1><h2 id="创建基本目录结构"><a href="#创建基本目录结构" class="headerlink" title="创建基本目录结构"></a>创建基本目录结构</h2><p>在 <code>CMD</code> 中运行：</p><pre><code class="bash">mkdir webpackcd webpacknpm init</code></pre><p>可以直接通过<code>CMD</code> 创建简单的文件，也可以直接创建：</p><pre><code class="powershell">type nul&gt;index.htmltype nul&gt;index.jstype nul&gt;webpack.config.js</code></pre><p><strong>index.html:</strong></p><pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;webpack-初探&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;script src=&quot;./dist/main.js&quot;&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>这里<strong>html</strong>里引入的 main.js 现在是没有的，一会将会把index.js 打包成 dist下的 mian.js</p><p><strong>index.js:</strong></p><pre><code class="js">console.log(&#39;webapck-初探&#39;);</code></pre><h2 id="安装Webpack"><a href="#安装Webpack" class="headerlink" title="安装Webpack"></a>安装Webpack</h2><p>在开始之前，请确保安装了<code>Node.js</code>的最新版本，使用旧版本，你可能遇到各种问题，因为它们可能缺少 webpack 功能以及/或者缺少相关 package 包。</p><p>要安装最新版本或特定版本，请运行以下命运之一：</p><pre><code class="bash">npm install --save-dev webpacknpm install --save-dev webpack@&lt;version&gt;</code></pre><p>如果你使用webpack 4+ 版本，你还需要安装 CLI。</p><pre><code class="bash">npm install --save-dev webpack-cli</code></pre><p>你也可以全局安装，这样就能在全局使用<code>webpack</code>命令，但是官方不推荐全局安装webpack。这会将你项目中的 webpack 锁定到指定版本，并且在使用不同的webpack版本项目中，可能会导致<strong>构建失败</strong>。</p><pre><code class="bash">npm install --global webpacknpm install --global webpack-cli</code></pre><h2 id="Webpack基本配置"><a href="#Webpack基本配置" class="headerlink" title="Webpack基本配置"></a>Webpack基本配置</h2><p>在<code>webpack.config.js</code>里写入：</p><pre><code class="javascript">const path = require(&#39;path&#39;);module.exports = {    entry: &#39;./index.js&#39;,   //  入口文件    output: {   //  出口文件配置        path: path.resolve(__dirname, &#39;dist&#39;),        filename: &#39;main.js&#39;,    },    mode: &#39;development&#39;,  //  模式：开发 development   生产 production}</code></pre><p>配置好后命令行敲入：</p><pre><code class="bash">webpack</code></pre><p>该命令会自动寻找根目录下的<code>webpack.config.js</code>，根据配置进行打包，这个时候我们就可以看到根目录多了<code>dist</code>目录，里面有一个<strong>main.js</strong>。</p><h1 id="Webpack四大核心"><a href="#Webpack四大核心" class="headerlink" title="Webpack四大核心"></a>Webpack四大核心</h1><h2 id="入口-entry"><a href="#入口-entry" class="headerlink" title="入口(entry)"></a>入口(entry)</h2><p><strong>入口起点</strong>指示 webpack 应该使用哪个模块，来作为构建内部<em>依赖图</em>的开始。进入入口起点后，webpack 会找出有哪些模块和库是入口起点（直接和简介）依赖的。</p><p> 每个依赖项随即被处理，最后输出到称之为 <em>bundles</em> 的文件中，我们将在下一章节详细讨论这个过程。 </p><p>可以通过在 <a href="https://www.webpackjs.com/configuration" target="_blank" rel="noopener">webpack 配置</a>中配置 <code>entry</code> 属性，来指定一个入口起点（或多个入口起点）。默认值为 <code>./src</code>。 </p><p>接下来我们看一个简单的例子：</p><pre><code class="javascript">module.exports = {  entry: &#39;./path/to/my/entry/file.js&#39;};</code></pre><h2 id="出口-output"><a href="#出口-output" class="headerlink" title="出口(output)"></a>出口(output)</h2><p><strong>output</strong> 属性告诉 webpack 在哪里输出它所创建的 <em>bundles</em>，以及如何命名这些文件，默认值为 <code>./dist</code>。基本上，整个应用程序结构，都会被编译到你指定的输出路径的文件夹中。你可以通过在配置中指定一个 <code>output</code> 字段，来配置这些处理过程：</p><pre><code class="javascript">const path = require(&#39;path&#39;);module.exports = {  entry: &#39;./path/to/my/entry/file.js&#39;,  output: {    path: path.resolve(__dirname, &#39;dist&#39;),    filename: &#39;my-first-webpack.bundle.js&#39;  }};</code></pre><p>在上面的示例中，我们通过 <code>output.filename</code> 和 <code>output.path</code> 属性，来告诉 webpack bundle 的名称，以及我们想要 bundle 生成(emit)到哪里。可能你想要了解在代码最上面导入的 path 模块是什么，它是一个 <a href="https://nodejs.org/api/modules.html" target="_blank" rel="noopener">Node.js 核心模块</a>，用于操作文件路径。</p><h2 id="·loader"><a href="#·loader" class="headerlink" title="·loader"></a>·loader</h2><p><em>loader</em> 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效<a href="https://www.webpackjs.com/concepts/modules" target="_blank" rel="noopener">模块</a>，然后你就可以利用 webpack 的打包能力，对它们进行处理。</p><p>本质上，webpack loader 将所有类型的文件，转换为应用程序的依赖图（和最终的 bundle）可以直接引用的模块。</p><blockquote><p>注意，loader 能够 <code>import</code> 导入任何类型的模块（例如 <code>.css</code> 文件），这是 webpack 特有的功能，其他打包程序或任务执行器的可能并不支持。我们认为这种语言扩展是有很必要的，因为这可以使开发人员创建出更准确的依赖关系图。</p></blockquote><p>在更高层面，在 webpack 的配置中 <strong>loader</strong> 有两个目标：</p><ol><li><code>test</code> 属性，用于标识出应该被对应的 loader 进行转换的某个或某些文件。</li><li><code>use</code> 属性，表示进行转换时，应该使用哪个 loader。</li></ol><pre><code class="javascript">const path = require(&#39;path&#39;);const config = {  output: {    filename: &#39;my-first-webpack.bundle.js&#39;  },  module: {    rules: [      { test: /\.txt$/, use: &#39;raw-loader&#39; }    ]  }};module.exports = config;</code></pre><p>以上配置中，对一个单独的 module 对象定义了 <code>rules</code> 属性，里面包含两个必须属性：<code>test</code> 和 <code>use</code>。这告诉 webpack 编译器(compiler) 如下信息：</p><blockquote><p>“嘿，webpack 编译器，当你碰到「在 <code>require()</code>/<code>import</code> 语句中被解析为 ‘.txt’ 的路径」时，在你对它打包之前，先<strong>使用</strong> <code>raw-loader</code> 转换一下。”</p></blockquote><h2 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件(plugins)"></a>插件(plugins)</h2><p>loader 被用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。<a href="https://www.webpackjs.com/api/plugins" target="_blank" rel="noopener">插件接口</a>功能极其强大，可以用来处理各种各样的任务。</p><p>想要使用一个插件，你只需要 <code>require()</code> 它，然后把它添加到 <code>plugins</code> 数组中。多数插件可以通过选项(option)自定义。你也可以在一个配置文件中因为不同目的而多次使用同一个插件，这时需要通过使用 <code>new</code> 操作符来创建它的一个实例。</p><p><strong>webpack.config.js</strong></p><pre><code class="javascript">const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;); // 通过 npm 安装const webpack = require(&#39;webpack&#39;); // 用于访问内置插件const config = {  module: {    rules: [      { test: /\.txt$/, use: &#39;raw-loader&#39; }    ]  },  plugins: [    new HtmlWebpackPlugin({template: &#39;./src/index.html&#39;})  ]};module.exports = config;</code></pre><h1 id="webpack-dev-server的使用"><a href="#webpack-dev-server的使用" class="headerlink" title="webpack-dev-server的使用"></a>webpack-dev-server的使用</h1><p>每次改完代码，都需要手动执行<code>webpack</code>命令打包编译文件，比较繁琐；这个时候我们可以使用热加载：</p><h2 id="安装webpack-dev-server："><a href="#安装webpack-dev-server：" class="headerlink" title="安装webpack-dev-server："></a>安装<code>webpack-dev-server</code>：</h2><pre><code class="javascript">npm install webpack-dev-server -D</code></pre><h2 id="在webpack-config-js中配置："><a href="#在webpack-config-js中配置：" class="headerlink" title="在webpack.config.js中配置："></a>在<code>webpack.config.js</code>中配置：</h2><pre><code class="js">const path = require(&#39;path&#39;);const webpack = require(&#39;webpack&#39;);module.exports = {    entry: &#39;./js/a.js&#39;,    output: {        path: path.resolve(__dirname, &#39;dist&#39;),        filename: &#39;main.js&#39;,    },    mode: &#39;development&#39;,    devServer: {      contentBase: &#39;./&#39;,      compress: true,      port: 9000,         hot: true    },    plugins: [        new webpack.NamedModulesPlugin(),        new webpack.HotModuleReplacementPlugin()    ],}</code></pre><h2 id="在package-json里面的scripts属性里面添加webpack-dev-server命令到开发环境"><a href="#在package-json里面的scripts属性里面添加webpack-dev-server命令到开发环境" class="headerlink" title="在package.json里面的scripts属性里面添加webpack-dev-server命令到开发环境"></a>在<code>package.json</code>里面的<code>scripts</code>属性里面添加<code>webpack-dev-server</code>命令到开发环境</h2><pre><code class="js">&quot;scripts&quot;: {    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,    &quot;dev&quot;: &quot;webpack-dev-server&quot;  },</code></pre><h2 id="执行npm-run-dev"><a href="#执行npm-run-dev" class="headerlink" title="执行npm run dev:"></a>执行<code>npm run dev</code>:</h2><pre><code class="bash">npm run dev</code></pre><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p><code>Webpack</code>是大家必须要学习的一项工具，本篇文章就暂且结束了，后面我会更新如何打包css、img，按需加载以及一些插件使用了；</p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul><li><a href="https://www.webpackjs.com/concepts/" target="_blank" rel="noopener">Webpack官网</a></li><li><a href="https://juejin.im/post/5d2fd19be51d4576bc1a0eb0#heading-13" target="_blank" rel="noopener">Webpack基本使用</a></li><li><a href="https://juejin.im/post/5b59d83de51d45195f0b4790" target="_blank" rel="noopener">Webpack入门教程</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> webpack </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> webpack </tag>
+            
+            <tag> 前端打包工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>对ES6-proxy的理解</title>
       <link href="/2020/01/05/%E5%AF%B9ES6-proxy%E7%9A%84%E7%90%86%E8%A7%A3/"/>
       <url>/2020/01/05/%E5%AF%B9ES6-proxy%E7%9A%84%E7%90%86%E8%A7%A3/</url>
@@ -54,35 +83,6 @@
             <tag> GitHub </tag>
             
             <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2019/12/30/hello-world/"/>
-      <url>/2019/12/30/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> web前端 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> jQuery </tag>
-            
-            <tag> 表格 </tag>
-            
-            <tag> 表单验证 </tag>
             
         </tags>
       
