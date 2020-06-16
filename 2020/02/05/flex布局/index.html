@@ -5,15 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>使用Hexo+Github搭建你的个人博客 - 布朗熊先生</title>
+    <title>flex布局 - 布朗熊先生</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="前端,博客,前端程序员,前端博客,布朗熊先生的博客,JavaScript,Vue,React,js,Css,"> 
-    <meta name="description" content="这里是布朗熊先生的博客，为什么叫布朗熊先生，大概是最爱的人喜欢这个名字把。一个前端爱好者，努力向高级前端开发前进。,使用Hexo+Github搭建你的个人博客
-作为一个合格的程序员，当然要有一个输入自己的博客，这不仅是学习很好的方法，也是面试中很能加分的一项！(PS:还阔以装😁)
-
-本篇文章介绍我是如何使用 H,"> 
+    <meta name="description" content="这里是布朗熊先生的博客，为什么叫布朗熊先生，大概是最爱的人喜欢这个名字把。一个前端爱好者，努力向高级前端开发前进。,前言​        最初的布局是使用 table 表格布局，后来是基于盒模型，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如垂直居,"> 
     <meta name="author" content="布朗熊先生"> 
     <link rel="alternative" href="atom.xml" title="布朗熊先生" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -63,7 +60,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://windows99.github.io">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">使用Hexo+Github搭建你的个人博客</h3>
+        <h3 class="subtitle">flex布局</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -88,30 +85,30 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(http://pic.wsktop.com/images/2019/10/25/backiee-127019.jpg);">
+                url(http://pic.wsktop.com/images/2020/01/10/images.jpg);">
         </div>
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/Hexo"><b>「
-                    </b>HEXO<b> 」</b></a>
+                <a href="/categories/CSS"><b>「
+                    </b>CSS<b> 」</b></a>
                 
-                十二月 31, 2019
+                二月 05, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/12/31/%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="使用Hexo+Github搭建你的个人博客" class="">使用Hexo+Github搭建你的个人博客</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/02/05/flex%E5%B8%83%E5%B1%80/" title="flex布局" class="">flex布局</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    4k
+                    7.4k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    4 mins.
+                    7 mins.
                 </span>
                 
                 
@@ -124,7 +121,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/flex/" rel="tag">flex</a></li></ul>
             
         </div>
     </div>
@@ -145,65 +142,127 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="使用Hexo-Github搭建你的个人博客"><a href="#使用Hexo-Github搭建你的个人博客" class="headerlink" title="使用Hexo+Github搭建你的个人博客"></a>使用Hexo+Github搭建你的个人博客</h1><blockquote>
-<p>作为一个合格的程序员，当然要有一个输入自己的博客，这不仅是学习很好的方法，也是面试中很能加分的一项！(PS:还阔以装😁)</p>
-<blockquote>
-<p>本篇文章介绍我是如何使用 <code>Hexo</code> + <code>Github</code> 来搭建我的博客。</p>
-</blockquote>
-</blockquote>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li><a href="https://github.com/" target="_blank" rel="noopener" title="Github地址">Gtihub</a> 账户我相信大家应该都用把，并且都会一些简单的操作；鉴于 <code>Gtihub</code> 是国外的服务器，有时候可能会因为网络的延迟造成加载很缓慢，也可以使用国内的 <a href="https://gitee.com/" target="_blank" rel="noopener" title="Gitee地址">Gitee</a> 或者 <a href="https://coding.net/" target="_blank" rel="noopener" title="Coding地址">Coding</a>。</li>
-<li>安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener" title="Git下载地址">Git</a>，Git是开源的分布式版本控制系统，用于敏捷高效地处理项目。我们网站在本地搭建好了，需要使用Git同步到GitHub上。</li>
-<li>本机要有 <a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener" title="node下载地址">node</a> 环境。这个我相信做前端开发的，搭建vue项目等等操作，都是需要 <code>node</code>的支持。</li>
-<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener" title="Hexo中文文档地址">Hexo</a> 的文章使用 <code>Markdown</code> 文件，建议没有看过简单写法的可以先去学习以下。</li>
-</ul>
-<blockquote>
-<p>以上为基础操作，就不具体介绍了，如果有疑问可以在<a href="https://windows99.github.io/whoami/" title="首页关于我的界面">关于</a>菜单找到我的联系方式，或者百度谷歌。</p>
-</blockquote>
-<h2 id="创建-Github-仓库"><a href="#创建-Github-仓库" class="headerlink" title="创建 Github 仓库"></a>创建 Github 仓库</h2><ol>
-<li>点击左边的按钮或者右上方+号，弹出下拉框，选择第一个。</li>
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​        最初的布局是使用 <code>table</code> 表格布局，后来是基于盒模型，依赖 <code>display</code> 属性 + <code>position</code> 属性 + <code>float</code> 属性。它对于那些特殊布局非常不方便，比如垂直居中就很不容易实现。 </p>
+<p>​        于是，W3C在2009年提出了一种新的方案——flex布局，可以简便、完整、响应式地实现各种布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能安全地使用这项功能。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/07/8712d713c7d0b884a5cb9770efc422b4.jpg" alt="浏览器兼容性"></p>
+<h1 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h1><p><code>Flex</code> 英文意思为：弯曲、屈伸、可以伸缩的布局，天生就是为了适配不同的分辨率。</p>
+<pre><code class="css">.flex-container{
+    dispaly: flex;
+}</code></pre>
+<p>设置完 <code>flex</code> 之后，就会有下面的关系图，我们来看下：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/07/3791e575c48b3698be6a94ae1dbff79d.png" alt="flex关系图"></p>
+<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）；<br>主轴的开始位置（与边框交叉点）叫做main start，结束位置叫做main end；<br>交叉轴的开始位置叫做cross start，结束位置叫做cross end；<br>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<h1 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h1><p>简单而言，谁被设置了 <code>display：flex</code> ，谁就是容器。容器属性要写到容器里！分为一下6个属性：</p>
+<ol>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
 </ol>
-<p>   <img src="http://pic.wsktop.com/images/2019/12/31/1.png" alt="创建仓库1"></p>
-<ol start="2">
-<li>在第一个输入框仓库名要写成 你GitHub的用户名+ <code>.github.io</code>，这里我已经拥有了这个仓库，所以会报出一个错误！箭头指向的按钮要点击勾选，初始化仓库。</li>
+<h2 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h2><p>flex-direction属性决定主轴的方向。</p>
+<pre><code class="css">.flex-container{
+    flex-direction: row | row-reverse | column | column-reverse | initial | inherit;
+}</code></pre>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/07/0cbe5f8268121114e87d0546e53cda6e.png" alt="flex-direction"></p>
+<ol>
+<li>row（默认）：主轴水平方向，起点在左端；</li>
+<li>row-reverse：主轴为水平方向，起点在右端。</li>
+<li>column：主轴为垂直方向，起点在上沿。</li>
+<li>column-reverse：主轴为垂直方向，起点在下沿。</li>
+<li>initial：意为“最初的”，是CSS提供的关键字，设置某个属性的默认值。</li>
+<li>inherit：意为“继承”，可以从父元素继承该属性。</li>
 </ol>
-<p>   <img src="http://pic.wsktop.com/images/2019/12/31/2.png" alt="创建仓库2"></p>
-<ol start="3">
-<li>创建完后会进入你的仓库，在工具栏找到 <code>Settings</code>，下滑找到 <code>Github Pages</code>，如下图：</li>
+<h2 id="flex-wrap属性"><a href="#flex-wrap属性" class="headerlink" title="flex-wrap属性"></a>flex-wrap属性</h2><p>flex-wrap属性决定如何换行。</p>
+<pre><code class="css">.flex-container{
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200601144824720.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VjYkpT,size_16,color_FFFFFF,t_70" alt="flex-wrap"></p>
+<ol>
+<li>nowarp（默认）：不换行。</li>
+<li>warp：换行，第一行在上方。</li>
+<li>warp-reverse：换行，第一行在下方。</li>
 </ol>
-<p>   <img src="http://pic.wsktop.com/images/2019/12/31/3.png" alt="选择GitHub Pages"></p>
-<p>在 <code>Source</code> 下的下拉框，选中第一个选项，等一会，在上方就会有一个地址，可以通过这个地址访问你的博客。到这里仓库就算是创建完成了！</p>
-<h2 id="本地搭建-Hexo"><a href="#本地搭建-Hexo" class="headerlink" title="本地搭建 Hexo"></a>本地搭建 Hexo</h2><p> Hexo就是我们的个人博客网站的框架 ，首先可以找到空白文件夹，安装好 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener" title="Git下载地址">Git</a> 可以右击，点击 git bash，打开git命令行（或者window下使用cmd命令行）输入：</p>
-<pre><code class="bash">npm install hexo-cli -g 
-//  或者
-yarn add hexo-cli -g</code></pre>
-<p>这个安装可能时间会有些长，耐心等待。如果在国内可以使用<a href="https://npm.taobao.org/" target="_blank" rel="noopener" title="淘宝NPM镜像地址">淘宝NPM镜像</a>。</p>
-<p>安装完后，初始化我们的博客，输入：</p>
-<pre><code class="bash">hexo init blog</code></pre>
-<p>初始化完成后，进入文件夹，并安装依赖</p>
-<pre><code class="bash">cd blog
-npm install 
-//  或者
-yarn</code></pre>
-<p>最后我们启动 <code>hexo</code> 服务：</p>
-<pre><code class="bash">hexo server</code></pre>
-<p>浏览器进入 <a href="http://localhost:4000/" target="_blank" rel="noopener" title="本地hexo服务地址">http://localhost:4000/</a>，可以看到 <code>hexo</code> 给我们的初始界面。到这里，我们本地就算是搭建好了，更多 <code>hexo</code>的配置和方法，请参考 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener" title="Hexo中文文档">官网</a></p>
-<h2 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h2><p>首先我们需要配置好站点配置文件，在hexo根目录下有一个 <code>_config.yml</code> 的文件，在themes文件夹，里面也有个 <code>_config.yml</code> 文件，这个被称为<strong>主题配置文件</strong>，这里我们打开站点配置文件。</p>
-<p>翻到最后修改为：</p>
-<pre><code class="yaml">deploy:
-  type: git
-  repo: [你的github仓库地址]
-  branch: [分支]
-  message: [提交信息]</code></pre>
-<p>其实就是给 <code>hexo deploy</code> 这个命令做相应的配置，需要在根目录安装Git部署插件：</p>
-<pre><code class="bash">npm install hexo-deployer-git --save
-//  或者
-yarn add hexo-deployer-git --save</code></pre>
-<p>这时，我们输入：</p>
-<pre><code class="bash">hexo clean &amp; hexo generate
-hexo deploy</code></pre>
-<p>输入我们的GitHub账户密码，就与服务器相关联了！</p>
-<p>md文件格式我会抽时间补一篇文章。hexo的编写建立大家先去查看 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener" title="Hexo中文文档地址">官网</a>，已经很详细了！本文只是做个记录。最后在2019年最后一天，祝大家2020年新年快乐！</p>
+<h2 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h2><p>flex-flow属性是 <code>flex-direction</code> 和 <code>flex-warp</code> 属性的简写，默认为row nowrap。</p>
+<pre><code class="css">.flex-container{
+    flex-flow: &lt;flex-direction&gt; &lt;flex-warp&gt;;
+}</code></pre>
+<h2 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h2><p>justify-content属性控制主轴的对齐方式。</p>
+<pre><code class="css">.flex-container{
+     justify-content: flex-start | flex-end | center | space-between | space-around;
+}</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200601150225317.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VjYkpT,size_16,color_FFFFFF,t_70" alt="justify-content"></p>
+<ol>
+<li>flex-start（默认值）：左对齐。</li>
+<li>flex-end：右对齐。</li>
+<li>center：居中。</li>
+<li>space-between：两端对齐，项目之间的间隔都相等。</li>
+<li>space-around：每个项目两侧的间隔相等。所以项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ol>
+<h2 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h2><p>align-items属性控制交叉轴的对齐方式。</p>
+<pre><code class="css">.flex-container {
+    align-items: flex-start | flex-end | center | baseline | stretch;
+}</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2020060115230852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VjYkpT,size_16,color_FFFFFF,t_70" alt="align-items"></p>
+<ol>
+<li>flex-start：交叉轴的起点对齐。</li>
+<li>flex-end：交叉轴的终点对齐。</li>
+<li>center：交叉轴的中点对齐。</li>
+<li>baseline: 项目的第一行文字的基线对齐。</li>
+<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+</ol>
+<h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2><p>align-content属性控制了多跟轴线的对齐方式，如果项目只有一根轴线，该属性不起作用。</p>
+<pre><code class="css">.flex-container{
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200601154350846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VjYkpT,size_16,color_FFFFFF,t_70" alt="align-content"></p>
+<ol>
+<li>flex-start：与交叉轴的起点对齐。</li>
+<li>flex-end：与交叉轴的终点对齐。</li>
+<li>center：与交叉轴的中点对齐。</li>
+<li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li>stretch（默认值）：轴线占满整个交叉轴。</li>
+</ol>
+<h1 id="项目的属性"><a href="#项目的属性" class="headerlink" title="项目的属性"></a>项目的属性</h1><ol>
+<li>order</li>
+<li>flex-grow</li>
+<li>flex-shrink</li>
+<li>flex-basis</li>
+<li>flex</li>
+<li>align-self</li>
+</ol>
+<h2 id="order"><a href="#order" class="headerlink" title="order"></a>order</h2><p>order属性设置项目的排列顺序，从小到大，数值越小，排列越靠前，默认为0。</p>
+<pre><code class="css">.item{
+    order: &lt;integer&gt;;
+}</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200601155120966.png" alt="order"></p>
+<h2 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h2><p>flex-grow定义项目的放大比例，默认为0，不参与放大。</p>
+<pre><code class="css">.item{
+    flex-grow: &lt;number&gt;; /* default 0 */
+}</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200601155655925.png" alt="flex-grow"></p>
+<h2 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h2><p>flex-shrink定义项目的缩放。</p>
+<pre><code class="css">.item{
+    flex-shrink: &lt;number&gt;; /* default 1 */
+}</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200602114634533.png" alt="flex-shrink"></p>
+<h2 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h2><p>flex-basis定义了在分配多余空间之前，项目占据的主轴空间。</p>
+<pre><code class="css">.item{
+    flex-basis:  &lt;number&gt; | auto; /* default auto */
+}</code></pre>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><p>flex属性是 <code>flex-grow</code> 、<code>flex-shrink</code> 、<code>flex-basis</code> 的简写。</p>
+<pre><code class="css">.item {
+     flex: none | [ &lt;&#39;flex-grow&#39;&gt; &lt;&#39;flex-shrink&#39;&gt;? || &lt;&#39;flex-basis&#39;&gt; ]
+}</code></pre>
+<h2 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h2><p>align-self属性允许子元素单独的对齐方式。默认为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
+<pre><code class="css">.item {
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2020060211563922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VjYkpT,size_16,color_FFFFFF,t_70" alt="align-self"></p>
+<h1 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h1><p>​        flex 布局是轴线布局，只能指定”项目“针对轴线的位置，可以看作是 <code>一维布局</code> 。grid网格布局是将容器划分成”行“和”列“，产生单元格，然后指定“项目所在”的单元格，可以看作是二维布局。gird布局远比flex布局强大，是最强大的css布局解决方案。</p>
+<p>​        下期我们谈谈grid布局。感谢！</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -254,7 +313,7 @@ hexo deploy</code></pre>
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用Hexo-Github搭建你的个人博客"><span class="toc-number">1.</span> <span class="toc-text">使用Hexo+Github搭建你的个人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建-Github-仓库"><span class="toc-number">1.2.</span> <span class="toc-text">创建 Github 仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地搭建-Hexo"><span class="toc-number">1.3.</span> <span class="toc-text">本地搭建 Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推送网站"><span class="toc-number">1.4.</span> <span class="toc-text">推送网站</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本原理"><span class="toc-number">2.</span> <span class="toc-text">基本原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#容器的属性"><span class="toc-number">3.</span> <span class="toc-text">容器的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-direction属性"><span class="toc-number">3.1.</span> <span class="toc-text">flex-direction属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-wrap属性"><span class="toc-number">3.2.</span> <span class="toc-text">flex-wrap属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-flow"><span class="toc-number">3.3.</span> <span class="toc-text">flex-flow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#justify-content"><span class="toc-number">3.4.</span> <span class="toc-text">justify-content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align-items"><span class="toc-number">3.5.</span> <span class="toc-text">align-items</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align-content"><span class="toc-number">3.6.</span> <span class="toc-text">align-content</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目的属性"><span class="toc-number">4.</span> <span class="toc-text">项目的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#order"><span class="toc-number">4.1.</span> <span class="toc-text">order</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-grow"><span class="toc-number">4.2.</span> <span class="toc-text">flex-grow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-shrink"><span class="toc-number">4.3.</span> <span class="toc-text">flex-shrink</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-basis"><span class="toc-number">4.4.</span> <span class="toc-text">flex-basis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex"><span class="toc-number">4.5.</span> <span class="toc-text">flex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align-self"><span class="toc-number">4.6.</span> <span class="toc-text">align-self</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#完结"><span class="toc-number">5.</span> <span class="toc-text">完结</span></a></li></ol>
                 </div>
             </div>
             

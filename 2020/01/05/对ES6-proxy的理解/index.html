@@ -10,10 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="前端,博客,前端程序员,前端博客,布朗熊先生的博客,JavaScript,Vue,React,js,Css,"> 
-    <meta name="description" content="这里是布朗熊先生的博客，为什么叫布朗熊先生，大概是最爱的人喜欢这个名字把。一个前端爱好者，努力向高级前端开发前进。,对ES6-proxy的理解
+    <meta name="description" content="这里是布朗熊先生的博客，为什么叫布朗熊先生，大概是最爱的人喜欢这个名字把。一个前端爱好者，努力向高级前端开发前进。,
 ES6(ECMAScript2015) 是 JavaScript 一个版本标准，作为前端爱好者是必须要掌握的，本篇记录我对ES6中，proxy 的理解。
 
-字面理解Pro,"> 
+字面理解Proxy 在英语中是代理的意思,"> 
     <meta name="author" content="布朗熊先生"> 
     <link rel="alternative" href="atom.xml" title="布朗熊先生" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -105,13 +105,13 @@ ES6(ECMAScript2015) 是 JavaScript 一个版本标准，作为前端爱好者是
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    6.1k
+                    5.9k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    6 mins.
+                    5 mins.
                 </span>
                 
                 
@@ -145,10 +145,10 @@ ES6(ECMAScript2015) 是 JavaScript 一个版本标准，作为前端爱好者是
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="对ES6-proxy的理解"><a href="#对ES6-proxy的理解" class="headerlink" title="对ES6-proxy的理解"></a>对ES6-proxy的理解</h1><blockquote>
+            <blockquote>
 <p>ES6(ECMAScript2015) 是 <code>JavaScript</code> 一个版本标准，作为前端爱好者是必须要掌握的，本篇记录我对ES6中，<code>proxy</code> 的理解。</p>
 </blockquote>
-<h2 id="字面理解"><a href="#字面理解" class="headerlink" title="字面理解"></a>字面理解</h2><p><code>Proxy</code> 在英语中是代理的意思，那我们就引发了几个疑问：</p>
+<h1 id="字面理解"><a href="#字面理解" class="headerlink" title="字面理解"></a>字面理解</h1><p><code>Proxy</code> 在英语中是代理的意思，那我们就引发了几个疑问：</p>
 <ol>
 <li>它代理了什么？</li>
 <li>为什么要代理？</li>
@@ -160,7 +160,7 @@ ES6(ECMAScript2015) 是 JavaScript 一个版本标准，作为前端爱好者是
 </blockquote>
 <p>那么通过阮老师的这句话，我们可以得出第一个问题的答案：</p>
 <p><strong>它代理了对象</strong></p>
-<h2 id="为什么要代理"><a href="#为什么要代理" class="headerlink" title="为什么要代理"></a>为什么要代理</h2><p>第二个问题是为什么要使用 <code>proxy</code>？我总结了以下几点：</p>
+<h1 id="为什么要代理"><a href="#为什么要代理" class="headerlink" title="为什么要代理"></a>为什么要代理</h1><p>第二个问题是为什么要使用 <code>proxy</code>？我总结了以下几点：</p>
 <ul>
 <li>拦截和监视外部对象的访问</li>
 <li>降低函数或类的复杂度</li>
@@ -207,7 +207,7 @@ printUser(&#39;name&#39;); // 输出： &#39;The user name is John&#39;
 printUser(&#39;email&#39;); // 抛出错误: The property [email] does not exist</code></pre>
 <p>在上面的示例中，我们包装了 <code>user</code> 对象，并设置了一个 <code>get</code> 方法。此方法充当拦截器，在返回值之前，会首先对属性值进行检查，如果不存在，则抛出异常。</p>
 <p>输出与第一种情况相同，但此时 <code>printUser</code> 函数专注于逻辑，只处理消息。</p>
-<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><p>proxy除了代理get，set操作，还能代理其他的操作，如下：</p>
+<h1 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h1><p>proxy除了代理get，set操作，还能代理其他的操作，如下：</p>
 <pre><code class="js">handler.getPrototypeOf()
 // 在读取代理对象的原型时触发该操作，比如在执行 Object.getPrototypeOf(proxy) 时。
 
@@ -246,7 +246,7 @@ handler.apply()
 
 handler.construct()
 // 在给一个目标对象为构造函数的代理对象构造实例时触发该操作，比如在执行new proxy() 时。</code></pre>
-<h2 id="proxy栗子"><a href="#proxy栗子" class="headerlink" title="proxy栗子"></a>proxy栗子</h2><p>通过属性查找数组中的特定对象</p>
+<h1 id="proxy栗子"><a href="#proxy栗子" class="headerlink" title="proxy栗子"></a>proxy栗子</h1><p>通过属性查找数组中的特定对象</p>
 <p>以下代理为数组扩展了一些实用工具，可一看到，你可以灵活地“定义”属性，而不需要使用 <code>Object.defineProperties</code> 方法。</p>
 <pre><code class="javascript">let products = new Proxy([
   { name: &#39;Firefox&#39;, type: &#39;browser&#39; },
@@ -303,7 +303,7 @@ console.log(products[&#39;Chrome&#39;]); // undefined
 console.log(products.browser); // [{ name: &#39;Firefox&#39;, type: &#39;browser&#39; }, { name: &#39;SeaMonkey&#39;, type: &#39;browser&#39; }]
 console.log(products.types); // [&#39;browser&#39;, &#39;mailer&#39;]
 console.log(products.number); // 3</code></pre>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
 <li>MDN官网对 <code>proxy</code> 的解释： <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank" rel="noopener" title="mdn官网对proxy解释">链接地址</a></li>
 <li>阮老师 《ECMAScript 6 入门》 对 <code>proxy</code> 的解释： <a href="http://es6.ruanyifeng.com/#docs/proxy" target="_blank" rel="noopener" title="阮老师 《ECMAScript 6 入门》对proxy解释">链接地址</a></li>
 <li>【译】Proxy及其优势：<a href="https://segmentfault.com/a/1190000019982184" target="_blank" rel="noopener">链接地址</a></li>
@@ -348,9 +348,9 @@ console.log(products.number); // 3</code></pre>
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">3 <p>文章</p></a></li>
-                    <li><a href="/categories">3 <p>分类</p></a></li>
-                    <li><a href="/tags">8 <p>标签</p></a></li>
+                    <li><a href="/">8 <p>文章</p></a></li>
+                    <li><a href="/categories">5 <p>分类</p></a></li>
+                    <li><a href="/tags">17 <p>标签</p></a></li>
                 </ul>
             </div>
             
@@ -359,7 +359,7 @@ console.log(products.number); // 3</code></pre>
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#对ES6-proxy的理解"><span class="toc-number">1.</span> <span class="toc-text">对ES6-proxy的理解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#字面理解"><span class="toc-number">1.1.</span> <span class="toc-text">字面理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要代理"><span class="toc-number">1.2.</span> <span class="toc-text">为什么要代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例方法"><span class="toc-number">1.3.</span> <span class="toc-text">实例方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proxy栗子"><span class="toc-number">1.4.</span> <span class="toc-text">proxy栗子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-number">1.5.</span> <span class="toc-text">参考文章</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#字面理解"><span class="toc-number">1.</span> <span class="toc-text">字面理解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么要代理"><span class="toc-number">2.</span> <span class="toc-text">为什么要代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实例方法"><span class="toc-number">3.</span> <span class="toc-text">实例方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#proxy栗子"><span class="toc-number">4.</span> <span class="toc-text">proxy栗子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文章"><span class="toc-number">5.</span> <span class="toc-text">参考文章</span></a></li></ol>
                 </div>
             </div>
             

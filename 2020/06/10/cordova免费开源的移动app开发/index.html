@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>cordova免费开源的移动app开发 - 布朗熊先生</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="前端,博客,前端程序员,前端博客,布朗熊先生的博客,JavaScript,Vue,React,js,Css,"> 
+    <meta name="description" content="这里是布朗熊先生的博客，为什么叫布朗熊先生，大概是最爱的人喜欢这个名字把。一个前端爱好者，努力向高级前端开发前进。,
+​        近期接手了一个app的开发，因为项目是需要在手持机终端设备来进行的，有打印、NFC等功能。打印功能是厂家封装好的cordova插件，由于第一次接触，于是开始了边学边做的开发过程。,"> 
+    <meta name="author" content="布朗熊先生"> 
+    <link rel="alternative" href="atom.xml" title="布朗熊先生" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1592317_sbu4mwie7eg.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">布朗熊先生</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://windows99.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">cordova免费开源的移动app开发</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;"><b>「 </b>文章<b> 」</b></a>
+                
+                六月 10, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/06/10/cordova%E5%85%8D%E8%B4%B9%E5%BC%80%E6%BA%90%E7%9A%84%E7%A7%BB%E5%8A%A8app%E5%BC%80%E5%8F%91/" title="cordova免费开源的移动app开发" class="">cordova免费开源的移动app开发</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    8.1k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    7 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/APP/" rel="tag">APP</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/cordova/" rel="tag">cordova</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p>​        近期接手了一个app的开发，因为项目是需要在手持机终端设备来进行的，有打印、NFC等功能。打印功能是厂家封装好的cordova插件，由于第一次接触，于是开始了边学边做的开发过程。</p>
+</blockquote>
+<h1 id="什么是-cordova"><a href="#什么是-cordova" class="headerlink" title="什么是 cordova"></a>什么是 <a href="https://cordova.axuer.com/" target="_blank" rel="noopener">cordova</a></h1><p>官网定义如下：</p>
+<p>Apache Cordova是一个开源的移动开发框架。允许你用标准的web技术-HTML5,CSS3和JavaScript做跨平台开发。 应用在每个平台的具体执行被封装了起来，并依靠符合标准的API绑定去访问每个设备的功能，比如说：传感器、数据、网络状态等。</p>
+<h1 id="安装-cordova"><a href="#安装-cordova" class="headerlink" title="安装 cordova"></a>安装 cordova</h1><p>cordova的命令运行在node.js上面并且可以通过npm进行安装。没有下载node的必须先下载<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node</a>！</p>
+<pre><code class="bash">npm install -g cordova</code></pre>
+<p>安装完成后，可以使用cmd输入cordova回车，如果不报找不到，那么恭喜你第一步完成了。</p>
+<h1 id="创建cordova工程"><a href="#创建cordova工程" class="headerlink" title="创建cordova工程"></a>创建cordova工程</h1><p>跳转到你项目的根目录，使用cmd或其他终端执行：</p>
+<pre><code class="bash">cordova create path [id [name [config]]] [options]
+
+cordova create hello com.example.hello HelloWorld</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>path</td>
+<td align="left">不应该存在的目录。 Cordova将创建此目录</td>
+</tr>
+<tr>
+<td>id</td>
+<td align="left">默认：io.cordova.hellocordova<br />项目id，安卓中的java包名，ios的bundleID都需要用到这个，该值可以修改</td>
+</tr>
+<tr>
+<td>name</td>
+<td align="left">默认：HelloCordova<br />项目的name，安卓平台可能会使用该值作为类名，该值可以修改</td>
+</tr>
+<tr>
+<td>config</td>
+<td align="left">json字符串，其键/值将包含在<path> /.cordova/config.json中</td>
+</tr>
+</tbody></table>
+<p>这会为你的cordova应用创建必须的目录</p>
+<pre><code>myapp/
+|-- config.xml  ~~~~~~~~配置文件
+|-- hooks/    ~~~~~~~~~~一些build时的特殊脚本
+|-- www/   ~~~~~~~~~~~web内容
+|-- platforms/   ~~~~~~~原生平台代码
+| |-- android/
+| |-- windows/
+| |-- ios/
+|-- plugins/  ~~~~~~~~~~插件
+  |--cordova-plugin-camera/</code></pre><h1 id="添加平台"><a href="#添加平台" class="headerlink" title="添加平台"></a>添加平台</h1><p>给你的App添加目标平台。我们将会添加’ios’和’android’平台，并确保他们保存在了<code>config.xml</code>中:</p>
+<pre><code class="bash">cordova platform add ios --save
+cordova platform add android --save</code></pre>
+<p>检查你当前平台设置状况:</p>
+<pre><code class="bash">cordova platform ls</code></pre>
+<p><strong>注意:在你使用CLI创建应用的时候， <em>不要</em> 修改<code>/platforms/</code>目录中的任何文件。当准备构建应用或者重新安装插件时这个目录通常会被重写。</strong></p>
+<h2 id="安卓平台安装要求-ios不做介绍"><a href="#安卓平台安装要求-ios不做介绍" class="headerlink" title="安卓平台安装要求(ios不做介绍)"></a><a href="[https://cordova.axuer.com/docs/zh-cn/latest/guide/platforms/android/index.html#%E5%AE%89%E8%A3%85%E8%A6%81%E6%B1%82](https://cordova.axuer.com/docs/zh-cn/latest/guide/platforms/android/index.html#安装要求)">安卓平台安装要求</a>(ios不做介绍)</h2><p>Cordova支持Android需要Android SDK，它可以安装在OS X, Linux和Windows上。查看 Android SDK的 <a href="http://developer.android.com/sdk/index.html#Requirements" target="_blank" rel="noopener">系统要求</a>. Cordova最新的Android包支持的是Android<a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels" target="_blank" rel="noopener">API-级别</a> 23。 最近几年 cordova-android支持的Android API-级别可以在下面这个表中看到:</p>
+<table>
+<thead>
+<tr>
+<th align="left">cordova-android 版本</th>
+<th align="left">支持的 Android API-级别</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">5.X.X</td>
+<td align="left">14 - 23</td>
+</tr>
+<tr>
+<td align="left">4.1.X</td>
+<td align="left">14 - 22</td>
+</tr>
+<tr>
+<td align="left">4.0.X</td>
+<td align="left">10 - 22</td>
+</tr>
+<tr>
+<td align="left">3.7.X</td>
+<td align="left">10 - 21</td>
+</tr>
+</tbody></table>
+<h3 id="Java开发工具包-JDK"><a href="#Java开发工具包-JDK" class="headerlink" title="Java开发工具包(JDK)"></a>Java开发工具包(JDK)</h3><p>安装<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank" rel="noopener">Java Development Kit (JDK) 7</a>或者最新的。</p>
+<p>当在Windows上安装的时候需要根据JDK路径设置<code>JAVA_HOME</code>环境变量(参见<a href="https://cordova.axuer.com/docs/zh-cn/latest/guide/platforms/android/index.html#setting-environment-variables" target="_blank" rel="noopener">设置环境变量</a>)</p>
+<h3 id="Android-SDK"><a href="#Android-SDK" class="headerlink" title="Android SDK"></a>Android SDK</h3><p>安装<a href="http://developer.android.com/sdk/installing/index.html?pkg=tools" target="_blank" rel="noopener">Android Stand-alone SDK</a>或者<a href="http://developer.android.com/sdk/installing/index.html?pkg=studio" target="_blank" rel="noopener">Android Studio</a>。如果你计划开发一个新的Cordova Android插件或者使用Android平台原生的工具去运行和调试，那么就使用Android Studio吧。否则，Android Stand-alone SDK Tools就足够构建和部署Android应用程序了。</p>
+<h3 id="添加SDK包"><a href="#添加SDK包" class="headerlink" title="添加SDK包"></a>添加SDK包</h3><p>在安装完Android SDK后,你需要安装任何你希望的目标<a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels" target="_blank" rel="noopener">API级别</a>的SDK包。建议你安装cordova-android(参见上面)支持的最高级别的SDK包。</p>
+<p>打开Android SDK Manager (例如，在终端上运行`android)，并确保下面已经安装:</p>
+<ol>
+<li>目标Android版本的Android Platform SDK</li>
+<li>Android SDK build-tools，版本19.1.0或者之上</li>
+<li>Android Support Repository (在”Extras”查找)</li>
+</ol>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><p>为了使功能正常使用Cordova的CLI工具需要设置一些环境变量。CLI会尝试为你设置这些变量，但在某些情况下你需要手动设置。下面这些变量需要更新:</p>
+<ol>
+<li>设置<code>JAVA_HOME</code>环境变量，指定为JDK安装路径</li>
+<li>设置<code>ANDROID_HOME</code>环境变量，指定为Android SDK安装路径</li>
+<li>同时也建议你添加Android SDK的<code>tools</code>和<code>platform-tools</code>目录到你的<code>PATH</code></li>
+</ol>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>这些步骤可能会因你安装的Windows版本而不同。在更改后，关闭并重新打开命令行提示符窗口，来看看他们的反应</p>
+<ol>
+<li>点击桌面左下角的<strong>开始</strong>菜单</li>
+<li>在搜索栏中，搜索<strong>环境变量</strong>并从出现的选项中选择<strong>编辑系统的环境变量</strong></li>
+<li>在出现的窗口中，点击<strong>环境变量</strong>按钮</li>
+</ol>
+<h4 id="创建一个新的环境变量"><a href="#创建一个新的环境变量" class="headerlink" title="创建一个新的环境变量:"></a>创建一个新的环境变量:</h4><ol>
+<li>点击<strong>新建…</strong> 并输入变量的名字和值</li>
+</ol>
+<h4 id="T设置你的PATH"><a href="#T设置你的PATH" class="headerlink" title="T设置你的PATH:"></a>T设置你的<strong>PATH</strong>:</h4><ol>
+<li><p>选择<strong>PATH</strong>变量并点击<strong>编辑</strong>。</p>
+</li>
+<li><p>添加条目到<strong>PATH</strong>相关的位置。 例如(用你本地的Android SDK安装路径替代路径):</p>
+<pre><code>C:\Development\android-sdk\platform-tools
+C:\Development\android-sdk\tools</code></pre></li>
+</ol>
+<h1 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h1><p>添加插件可以通过插件id和Git repo的url来添加:</p>
+<pre><code>cordova plugin add cordova-plugin-xyprogress //通过插件id
+cordova plugin add https://github.com/cheerszhou/CordovaPulginForTest.git //通过Git url添加</code></pre><p>添加完插件后, 在项目目录的下<code>plugins/</code>会显示你添加的插件，而且config.xml中也会注册这些插件。</p>
+<pre><code>cordova plugin rm cordova-plugin-xyprogress  // 插件删除
+
+cordova plugin ls  // 列举安装得插件</code></pre><h1 id="构建和运行"><a href="#构建和运行" class="headerlink" title="构建和运行"></a>构建和运行</h1><p>在构建之前，你需要检查你的开发环境是否搭建好了？</p>
+<pre><code class="bash">cordova requirements</code></pre>
+<p>使用 <code>Cordova build</code> 构建所有平台，也可以指定构建平台：</p>
+<pre><code>cordova build android</code></pre><p>使用 <code>cordova run</code> 来构建并运行所有平台，也可以使用下面带选项得命令：</p>
+<ul>
+<li>在Android平台上,名为Nexus_5_API_23_x86模拟器上运行的当前cordova项目的发布版本. 运行时使用特定构建配置：</li>
+</ul>
+<pre><code class="undefined">cordova run android --release --buildConfig=..\myBuildConfig.json --target=Nexus_5_API_23_x86</code></pre>
+<ul>
+<li>使用真机或模拟器（如果没有连接设备）在Android平台上运行当前cordova项目的调试版本. 跳过构建：</li>
+</ul>
+<pre><code class="undefined">cordova run android --nobuild</code></pre>
+<ul>
+<li>在ios设备上运行当前cordova项目的调试版本：</li>
+</ul>
+<pre><code class="undefined">cordova run ios --device</code></pre>
+<ul>
+<li>枚举可用于运行此应用程序的所有连接设备和可用模拟器的名称：</li>
+</ul>
+<pre><code class="cpp">cordova run ios --list</code></pre>
+<ul>
+<li>或者模拟器中运行:</li>
+</ul>
+<pre><code class="bash">cordova emulate ios
+//指定模拟器使用的模拟设备:
+cordova emulate ios --target iPhone-6s
+cordova emulate ios --target iPhone-6s-Plus</code></pre>
+<h1 id="调式和测试"><a href="#调式和测试" class="headerlink" title="调式和测试"></a>调式和测试</h1><p>由于app安装在安卓设备里，无法像浏览器一样使用控制台进行输出调试。但是可以使用谷歌的手机调式：</p>
+<p><a href="[chrome://inspect/#devices](chrome://inspect/#devices)">点击这个链接</a>进入谷歌界面，手机USB连接你的电话，要打开USB调式模式，使用运行或者打包就可以在这个界面看到我们的设备，并显示要调式的app，这样就可以查看控制台进行调试了！</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='62bd657d8054490fe343'
+        data-cs='f6f07590f105758d2b0e74bfc50b1010ad6879f6'
+        data-r='windows99.github.io'
+        data-o='windows99'
+        data-a='windows99'
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>布朗熊先生</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/windows99" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://www.zhihu.com/people/falselove-70/activities" target="_blank"><span
+                                    class=" iconfont icon-zhihu"></span></a></dd>
+                        <dd><a href="mailto:wangsk0407@gmail.com" target="_blank"><span
+                                    class=" iconfont icon-gmail"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">8 <p>文章</p></a></li>
+                    <li><a href="/categories">5 <p>分类</p></a></li>
+                    <li><a href="/tags">17 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是-cordova"><span class="toc-number">1.</span> <span class="toc-text">什么是 cordova</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装-cordova"><span class="toc-number">2.</span> <span class="toc-text">安装 cordova</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建cordova工程"><span class="toc-number">3.</span> <span class="toc-text">创建cordova工程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加平台"><span class="toc-number">4.</span> <span class="toc-text">添加平台</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安卓平台安装要求-ios不做介绍"><span class="toc-number">4.1.</span> <span class="toc-text">安卓平台安装要求(ios不做介绍)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java开发工具包-JDK"><span class="toc-number">4.1.1.</span> <span class="toc-text">Java开发工具包(JDK)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-SDK"><span class="toc-number">4.1.2.</span> <span class="toc-text">Android SDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加SDK包"><span class="toc-number">4.1.3.</span> <span class="toc-text">添加SDK包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置环境变量"><span class="toc-number">4.1.4.</span> <span class="toc-text">设置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows"><span class="toc-number">4.1.5.</span> <span class="toc-text">Windows</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加插件"><span class="toc-number">5.</span> <span class="toc-text">添加插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构建和运行"><span class="toc-number">6.</span> <span class="toc-text">构建和运行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调式和测试"><span class="toc-number">7.</span> <span class="toc-text">调式和测试</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            布朗熊先生
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+
+    
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+
+    
+<script src="/js/busuanzi.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
